@@ -5,12 +5,14 @@ const cors = require('cors');
 const zomatoRoutes=require('./routes/zomato')
 const paymentRoutes=require('./routes/razorPay')
 
-//connect to mongoDB 
-mongoose.connect('mongodb://localhost/zomato',
+//connect to mongoDB
+
+const MONGO_URI = "mongodb+srv://root:root@cluster0.uuz4mhz.mongodb.net/zomato";
+//const MONGO_URI = "mongodb://localhost/zomato";
+mongoose.connect(MONGO_URI,
      ()=>{
     console.log("mongoDB connected")},
     e=>console.log(e))
-
 
 //create express server
 var app=express()
